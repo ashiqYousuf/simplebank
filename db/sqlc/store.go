@@ -56,7 +56,7 @@ performs a money transfer from one account to the other.
 creates a Transfer record, add account Entries, and update Accounts balance
 within a single db txn.
 */
-func (store *Store) transferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
+func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
 	var result TransferTxResult
 
 	err := store.execTx(ctx, func(q *Queries) error {
